@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="">
+		<script src=""></script>
+		<title>Login</title>
+	</head>
+	<body>
+		<div class="" id="usernamePassword">
+			<form action="" method="post">
+				<label for="username">Account Number:</label> {% csrf_token %}
+				<input type="text" name="username" value="{{username}}" id="username"><br />
+				<label for="password">Password:</label>
+				<input type="password" name="password" value="" id="password"><br />
+				<input type="submit" value="Login" />
+			</form>
+		</div>
+
+	</body>
+</html>

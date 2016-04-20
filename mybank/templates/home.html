@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/static/css/home.css">
+		<script src="/static/js/home.js"></script>
+		<title>Customer Service Assistant</title>
+	</head>
+	<script>
+		window.alert("{{request.user}} Sign-in successful");
+	</script>
+	<body>
+		
+		<div class="" id="title">
+			<div>
+				Customer Service Assistant
+			</div>
+		</div>
+		<form action="/main/" method="get">
+			<div id="div_mic">
+				<input type="image" id= "mic" value="submit" src="/static/img/mic.svg" width="66">
+			</div>
+			<div class="login">
+			{% if request.user.is_authenticated %}
+				<p>Welcome {{request.user}}!!</p>
+					<a href="/accounts/logout/">
+						<input  class="logout" type="button" value="Logout"></input>
+					</a>
+			</div>
+			{% else %}
+				<p>您尚未登入<a href="/acoounts/login/">登入</a></p>
+			{% endif %}
+			</div>
+		</form>
+	</body>
+</html>
